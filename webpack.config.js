@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.tsx?$/, // Matches both .ts and .tsx files
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
@@ -21,6 +21,14 @@ module.exports = {
             transpileOnly: true, // Optional: speeds up compilation, but disables type checking
           }
         },
+      },
+      {
+        test: /\.scss$/, // Matches .scss files
+        use: [
+          'style-loader',  // Injects styles into DOM
+          'css-loader',    // Turns CSS into CommonJS modules
+          'sass-loader'    // Compiles Sass to CSS
+        ],
       },
     ],
   },

@@ -1,20 +1,11 @@
-//import "./root.component.css";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Sidebar from "./components/Sidebar/sidebar.component";
+import './root.component.scss';
 
-export default function Root(props) {
-  return <BrowserRouter>
-
-    <nav className="nav">
-      <Link to="/" className="link">
-        Home
-      </Link>
-      <Link to="/hacker-news" className="link">
-        News Reader
-      </Link>
-      <Link to="/books-store" className="link">
-        Books Store
-      </Link>
-    </nav>
-  </BrowserRouter>
-
+export default function Root() {
+  return (
+    <BrowserRouter>
+      <Sidebar />
+    </BrowserRouter>
+  );
 }
