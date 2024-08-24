@@ -11,9 +11,10 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar-container">
+    <>
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
-        <ul>
+        <button className="toggle-button" onClick={toggleSidebar}> ${isOpen ? '❌' :  '☰'}</button>
+        <ul className="sidebar-nav">
             <li>
                 <Link to="/" className="link">
                 Home
@@ -31,10 +32,7 @@ const Sidebar = () => {
             </li>
         </ul>
       </div>
-      <div className="toggle-icon" onClick={toggleSidebar}>
-        ☰
-      </div>
-    </div>
+    </>
   );
 };
 
