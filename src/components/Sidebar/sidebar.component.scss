@@ -1,40 +1,74 @@
-.sidebar-container {
-    display: flex;
-    align-items: flex-start;
+$sidebar-width: 250px;
+$sidebar-bg-color: #333;
+$sidebar-text-color: #fff;
+$sidebar-toggle-btn-size: 30px;
+$sidebar-closed-width: $sidebar-toggle-btn-size + 10px;
+
+.sidebar {
+  width: $sidebar-width;
+  background-color: $sidebar-bg-color;
+  color: $sidebar-text-color;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+
+  &.closed {
+    width: $sidebar-closed-width;
+
+    .sidebar-nav li {
+      width: $sidebar-closed-width; /* Restrict li elements width */
+    }
   }
-  
-  .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #333;
-    color: white;
-    transition: transform 0.3s ease-in-out;
-    padding: 15px;
+
+  .toggle-button {
+    background-color: $sidebar-bg-color;
+    color: $sidebar-text-color;
+    font-size: $sidebar-toggle-btn-size;
+    cursor: pointer;
+    padding: 10px;
+    align-self: flex-end;
   }
-  
-  .sidebar.closed {
-    transform: translateX(-100%);
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
+
+  .sidebar-nav {
+    list-style: none;
     padding: 0;
+    margin: 20px 0 0 0;
+    flex-grow: 1;
+    overflow: hidden;
+
+    li {
+      padding: 15px;
+      cursor: pointer;
+      text-align: left;
+      padding-left: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: none; /* Hide links by default */
+
+      &:hover {
+        background-color: lighten($sidebar-bg-color, 10%);
+      }
+
+      .link {
+        display: none; /* Hide links by default */
+        width: 100%;
+        color: $sidebar-text-color;
+        text-decoration: none;
+        transition: display 0.3s ease-in-out;
+
+        &.enabled {
+          display: block; /* Show links when enabled */
+        }
+      }
+    }
+    li.link-item {
+      &.enabled {
+        display: block; /* Show links when enabled */
+      }
+    }
   }
-  
-  .sidebar ul li {
-    margin: 15px 0;
-    cursor: pointer;
-  }
-  
-  .toggle-icon {
-    font-size: 30px;
-    cursor: pointer;
-    padding: 15px;
-    background-color: #333;
-    color: white;
-  }
-  
+}
