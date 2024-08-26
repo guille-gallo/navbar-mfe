@@ -1,9 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import React, { useState, useEffect } from 'react';
 import './sidebar.component.scss';
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const toggleSidebar = () => {
@@ -40,7 +42,7 @@ const Sidebar = () => {
     <>
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="toggle-button" onClick={toggleSidebar}>
-          {isOpen ? '❌' : '☰'}
+          {isOpen ? <CloseIcon /> : <MenuIcon />}
         </div>
         <ul className="sidebar-nav">
           <li className="link-item" onClick={() => handleLinkClick("/")}>
