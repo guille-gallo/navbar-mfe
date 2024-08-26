@@ -8,6 +8,7 @@ $sidebar-closed-width: $sidebar-toggle-btn-size + 10px;
   width: $sidebar-width;
   background-color: $sidebar-bg-color;
   color: $sidebar-text-color;
+  min-height: 100vh;
   height: 100vh;
   position: fixed;
   top: 0;

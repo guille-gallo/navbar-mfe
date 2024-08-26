@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './sidebar.component.scss';
 
 const Sidebar = () => {
