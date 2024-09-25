@@ -45,8 +45,8 @@ const Sidebar = () => {
           {isOpen ? <CloseIcon /> : <MenuIcon />}
         </div>
         <ul className="sidebar-nav">
-          <li className="link-item" onClick={() => handleLinkClick("/")}>
-            <Link to="/" className="link">
+          <li className="link-item" onClick={() => handleLinkClick("/root-mfe")}>
+            <Link to="/root-mfe" className="link">
               Home
             </Link>
           </li>
