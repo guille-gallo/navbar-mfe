@@ -50,9 +50,9 @@ const Sidebar = () => {
               Home
             </Link>
           </li>
-          <li className="link-item" onClick={() => handleLinkClick("/root-mfe/hacker-news")}>
-            <Link to="/root-mfe/hacker-news" className="link">
-              News Reader
+          <li className="link-item" onClick={() => handleLinkClick("/root-mfe/tech-news-reader")}>
+            <Link to="/root-mfe/tech-news-reader" className="link">
+              Tech News Reader
             </Link>
           </li>
           <li className="link-item" onClick={() => handleLinkClick("/root-mfe/books-store")}>
